@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         //chama classes seeders separadamente, cada uma em seu arquivo (forma mais organizada)
         $this->call([
             UserSeeder::class,
-            MovieSeeder::class,
-            GenreSeeder::class,
+            GenreSeeder::class, //A ordem importa
+            MovieSeeder::class,//A ordem importa
             // PostSeeder::class,
             // CommentSeeder::class,
         ]);

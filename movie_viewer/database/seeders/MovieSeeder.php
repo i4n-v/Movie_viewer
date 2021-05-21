@@ -15,7 +15,8 @@ class MovieSeeder extends Seeder
     {
         for($i = 1; $i <= 5; $i++){
             \App\Models\movie::factory(1)->create([
-                'user_id' => \App\Models\user::all()->random() //pega o id de um usuário aletório.
+                'user_id' => \App\Models\user::all()->random(), //pega o id de um usuário aletório.
+                'genre_id' => \App\Models\genre::all()->random() //pega o id de um gênero aleatório.
             ]);
         }
     }

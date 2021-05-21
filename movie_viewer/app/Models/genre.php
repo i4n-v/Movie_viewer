@@ -9,5 +9,10 @@ class genre extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['genre', 'id'];
+    protected $fillable = ['genre'];
+
+    public function genresMovie() {
+        return $this->hasMany(movie::class); 
+        //retorna os filmes atrelados ao gênero 
+    }
 }
