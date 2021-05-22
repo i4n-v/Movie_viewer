@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -14,7 +16,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        return 'HELLO WORLD'; //request do /movie/create vindo da rota em metodo get
     }
 
     /**
@@ -24,7 +26,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return "create";
     }
 
     /**
@@ -35,7 +37,17 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        movie::create([
+            'name' => $request->title,
+            'author' => $request->author,
+            'year' => $request->year,
+            'duration' => $request->duration,
+            'description' => $request->desc,
+            'genre_id' => $request->genre,
+            'user_id' => Auth::user()->id
+        ]);
+
+        return Redirect::route('dashboard');
     }
 
     /**

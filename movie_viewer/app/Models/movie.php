@@ -10,7 +10,7 @@ class movie extends Model
     use HasFactory;
 
     //diz para o model os atributos que são preenchiveis da tabela do banco de dados.
-    protected $fillable = ['name', 'author', 'year', 'duration', 'description', 'user_id']; 
+    protected $fillable = ['name', 'author', 'year', 'duration', 'description', 'user_id', 'genre_id']; 
 
     public function viewers() {
         return $this->belongsTo(User::class, 'user_id'); 
