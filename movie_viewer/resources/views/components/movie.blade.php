@@ -1,9 +1,9 @@
 @props(['movie']) <!-- Especifica uma variável de fora do componente para dentro dele -->
 
-<table class="table-auto border-b w-1/2 shadow text-gray-600" style="background-color:#F9FFFF">
+<table class="table-auto border-b  shadow text-gray-600" style="background-color:#F9FFFF">
     <thead>
-        <tr class="container">
-            <th class="w-1/3 border text-blue-900" colspan="2">{{$movie->name}}<span class="float-right text-red-700 bg-red-200 rounded-full px-1 ">&times</span></th>
+        <tr>
+            <th class="w-1/3 border text-blue-900" colspan="2">{{$movie->name}}<a href="{{ route('remove_movie', $movie) }}" class="float-right text-red-700 bg-red-200 rounded-full px-1 text-decoration-none">&times</a></th>
         </tr>
     </thead>
     <tbody>

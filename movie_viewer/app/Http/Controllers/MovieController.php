@@ -92,6 +92,9 @@ class MovieController extends Controller
      */
     public function destroy(movie $movie)
     {
-        //
+        if($movie->viewers-> == Auth::user()->){
+            $movie->delete();
+            return Redirect::route('dashboard');
+        }
     }
 }

@@ -29,4 +29,6 @@ Route::get('/dashboard', function () {
 //name(['create_movie']): Dá um nome a rota
 Route::post('/movie/create', [MovieController::Class, 'store'])->middleware(['auth'])->name('create_movie');
 
+Route::get('/movie/remove/{movie}', [MovieController::Class, 'destroy'])->middleware(['auth'])->name('remove_movie');
+
 require __DIR__.'/auth.php';
