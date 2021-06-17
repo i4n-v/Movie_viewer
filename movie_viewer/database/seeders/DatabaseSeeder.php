@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             GenreSeeder::class, //A ordem importa
             MovieSeeder::class,//A ordem importa
+            MovieGenreSeeder::class,
             // PostSeeder::class,
             // CommentSeeder::class,
         ]);

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+//use App\Models\movie
 
 class MovieSeeder extends Seeder
 {
@@ -13,10 +14,11 @@ class MovieSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 5; $i++){
-            \App\Models\movie::factory(1)->create([
-                'user_id' => \App\Models\user::all()->random(), //pega o id de um usuário aletório.
-                'genre_id' => \App\Models\genre::all()->random() //pega o id de um gênero aleatório.
+        for($i = 1; $i <= 20; $i++){
+            \App\Models\movie::factory(1)->create([              
+                //pega o id de um usuário aletório.
+                'user_id' => \App\Models\user::all()->random(),              
+                //'genre_id' => \App\Models\genre::all()->random() //pega o id de um gênero aleatório.
             ]);
         }
     }

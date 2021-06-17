@@ -8,7 +8,11 @@
     </thead>
     <tbody>
         <tr class="border"><td class="text-blue-900 font-bold pl-2 w-1/12">Autor:</td><td>{{$movie->author}}</td></td>
-        <tr class="border"><td class="text-blue-900 font-bold pl-2 w-1/12">Gênero:</td><td>{{$movie->genre->genre}}</td></td>
+        <tr class="border"><td class="text-blue-900 font-bold pl-2 w-1/12">Gêneros:</td><td>     
+                @foreach ($movie->genres as $genre)
+                   <span class="text-blue-900 font-bold">{{$genre->genre}}</span>
+                @endforeach 
+        </td></td>
         <tr class="border"><td class="text-blue-900 font-bold pl-2 w-1/12">Ano de lançamento:</td><td>{{$movie->year}}</td></td>
         <tr class="border"><td class="text-blue-900 font-bold pl-2 w-1/12">Duração:</td><td>{{$movie->duration}}hrs</td></td>
         <tr class="border"><td class="text-blue-900 font-bold pl-2 w-1/12">Descrição:</td><td>{{$movie->description}}</td></td>

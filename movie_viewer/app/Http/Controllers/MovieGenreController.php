@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\movie;
+use App\Models\movieGenre;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
 
-class MovieController extends Controller
+class MovieGenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return 'HELLO WORLD'; //request do /movie/create vindo da rota em metodo get
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return "create";
+        //
     }
 
     /**
@@ -37,28 +35,16 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        $movie = movie::create([
-            'name' => $request->title,
-            'author' => $request->author,
-            'year' => $request->year,
-            'duration' => $request->duration,
-            'description' => $request->desc,
-            'genre_id' => $request->genre,
-            'user_id' => Auth::user()->id
-        ]);
-
-            $movie->genres()->attach($request->genres);
-
-        return Redirect::route('dashboard');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\movie  $movie
+     * @param  \App\Models\movieGenre  $movieGenre
      * @return \Illuminate\Http\Response
      */
-    public function show(movie $movie)
+    public function show(movieGenre $movieGenre)
     {
         //
     }
@@ -66,10 +52,10 @@ class MovieController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\movie  $movie
+     * @param  \App\Models\movieGenre  $movieGenre
      * @return \Illuminate\Http\Response
      */
-    public function edit(movie $movie)
+    public function edit(movieGenre $movieGenre)
     {
         //
     }
@@ -78,10 +64,10 @@ class MovieController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\movie  $movie
+     * @param  \App\Models\movieGenre  $movieGenre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, movie $movie)
+    public function update(Request $request, movieGenre $movieGenre)
     {
         //
     }
@@ -89,14 +75,11 @@ class MovieController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\movie  $movie
+     * @param  \App\Models\movieGenre  $movieGenre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(movie $movie)
+    public function destroy(movieGenre $movieGenre)
     {
-        if($movie->viewers->id == Auth::user()->id){
-            $movie->delete();
-            return Redirect::route('dashboard');
-        }
+        //
     }
 }

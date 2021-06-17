@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function movies() {
         return $this->hasMany(movie::class); 
-        //retorna os filmes cadastrados pelo usuário, relacionameto um pra muitos (n:m)
+        //retorna os filmes cadastrados pelo usuário, relacionameto um pra muitos (1:m)
     }
 }
